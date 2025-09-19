@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edward Miguel C. Bunag - Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Added Three.js CDN for 3D animations -->
+    <script src="https://cdn.jsdelivr.net/npm/three@0.152.2/build/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r148/three.min.js"></script>
+</head>
+<body>
+    <!-- Header Section -->
+    <header id="header">
+        <div class="container">
+            <nav id="sidemenu">
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <i class="fas fa-times" onclick="closemenu()"></i>
+                </ul>
+                <i class="fas fa-bars" onclick="openmenu()"></i>
+            </nav>
+            <div class="header-text">
+                <p>Visual Content Creator</p>
+                <h1>Hi, I'm <span>Edward </span>Miguel Bunag</h1>
+            </div>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <div id="about">
+        <div class="container">
+            <div class="row">
+                <div class="about-col-1">
+                    <img src="img/profile.jpg" alt="Edward Miguel">
+                </div>
+                <div class="about-col-2">
+                    <h1 class="sub-title">About Me</h1>
+                    <p>I am a passionate visual designer with expertise in photography, videography, 3D design, and branding. I love creating compelling visual stories that connect with audiences and bring ideas to life through various digital mediums.</p>
+                    
+                    <div class="tab-titles">
+                        <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                        <p class="tab-links" onclick="opentab('experience')">Experience</p>
+                        <p class="tab-links" onclick="opentab('education')">Education</p>
+                    </div>
+                    
+                    <div class="tab-contents active-tab" id="skills">
+                        <ul>
+                            <li><span>Photography</span><br>Portrait, Event, and Commercial Photography</li>
+                            <li><span>Videography</span><br>Video Production and Post-Production</li>
+                            <li><span>3D Design</span><br>3D Modeling and Rendering</li>
+                            <li><span>Graphic Design</span><br>Logo Design and Brand Identity</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="tab-contents" id="experience">
+                        <ul>
+                            <li><span>2022 - Current</span><br>Freelance Visual Content Creator and A Photographer</li>
+                            <li><span>2021 - 2022</span><br>Junior Graphic Designer at Creative Studio</li>
+                            <li><span>2020 - 2021</span><br>Photography Assistant</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="tab-contents" id="education">
+                        <ul>
+                            <li><span>2025</span><br>Bachelor of Science in Information Technology</li>
+                            <li><span>2025</span><br>Certificate in Youth Multimedia Workshop on Content Creation with the topic of Photography</li>
+                            <li><span>2025</span><br>Introduction to Cybersecurity Certificate</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Services Section -->
+    <div id="services">
+        <div class="container">
+            <h1 class="sub-title">My Services</h1>
+            <div class="services-list">
+                <div class="service-item">
+                    <i class="fas fa-camera"></i>
+                    <h2>Photography</h2>
+                    <p>Professional photography services for portraits, events, and commercial projects with creative composition and lighting.</p>
+                    <a href="#photography-portfolio" class="service-btn">Learn more</a>
+                </div>
+                <div class="service-item">
+                    <i class="fas fa-video"></i>
+                    <h2>Videography</h2>
+                    <p>Complete video production services from concept to final edit, including promotional videos and documentaries.</p>
+                    <a href="#videography-portfolio" class="service-btn">Learn more</a>
+                </div>
+                <div class="service-item">
+                    <i class="fas fa-cube"></i>
+                    <h2>3D Design</h2>
+                    <p>3D modeling, rendering, and animation services for product visualization and architectural presentations.</p>
+                    <a href="#3d-portfolio" class="service-btn">Learn more</a>
+                </div>
+                <div class="service-item">
+                    <i class="fas fa-palette"></i>
+                    <h2>Logo Design</h2>
+                    <p>Custom logo design and brand identity development that captures your brand's essence and values.</p>
+                    <a href="#logo-portfolio" class="service-btn">Learn more</a>
+                </div>
+                <div class="service-item">
+                    <i class="fas fa-adjust"></i>
+                    <h2>Color Grading</h2>
+                    <p>Professional color correction and grading services to enhance the mood and visual appeal of your videos.</p>
+                    <a href="#colorgrading-portfolio" class="service-btn">Learn more</a>
+                </div>
+                <div class="service-item">
+                    <i class="fas fa-font"></i>
+                    <h2>Typography</h2>
+                    <p>Custom typography design and lettering for branding, posters, and digital media applications.</p>
+                    <a href="#typography-portfolio" class="service-btn">Learn more</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Portfolio Section -->
+    <div id="portfolio">
+        <div class="container">
+            <h1 class="sub-title">My Work</h1>
+            
+            <!-- Photography Portfolio -->
+            <div id="photography-portfolio" class="portfolio-section">
+                <h2 class="portfolio-title">Photography</h2>
+                <div class="work-list">
+                    <div class="work">
+                        <img src="img/photo2.png" alt="Photography Work 1">
+                        <div class="layer">
+                            <h3>Portrait Photography</h3>
+                            <p>Professional portrait session with creative lighting and composition.</p>
+                            <a href="#"><i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                    </div>
+                    <div class="work">
+                        <img src="img/WED.png" alt="Photography Work 2">
+                        <div class="layer">
+                            <h3>Event Photography</h3>
+                            <p>Capturing memorable moments at corporate and social events.</p>
+                            <a href="#"><i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                    </div>
+                    <div class="work">
+                        <img src="img/photo4.png" alt="Photography Work 3">
+                        <div class="layer">
+                            <h3>Commercial Photography</h3>
+                            <p>Product and commercial photography for marketing materials.</p>
+                            <a href="#"><i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Videography Portfolio -->
+            <div id="videography-portfolio" class="portfolio-section">
+                <h2 class="portfolio-title">Videography</h2>
+                <div class="work-list">
+                    <div class="work video-work">
+                        <video autoplay muted controls loop>
+                            <source src="vid/videography3.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <div class="layer">
+                            <h3>Promotional Video</h3>
+                            <p>Corporate promotional video with dynamic editing and motion graphics.</p>
+                            <a href="#"><i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                    </div>
+                    <div class="work video-work">
+                        <video autoplay muted controls loop>
+                            <source src="vid/videography1.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <div class="layer">
+                            <h3>Documentary</h3>
+                            <p>Short documentary film with compelling storytelling and cinematography.</p>
+                            <a href="#"><i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                    </div>
+                    <div class="work video-work">
+                        <video autoplay muted controls loop>
+                            <source src="vid/videography2.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <div class="layer">
+                            <h3>Music Video</h3>
+                            <p>Creative music video with artistic visuals and synchronized editing.</p>
+                            <a href="#"><i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Color Grading Portfolio -->
+            <div id="colorgrading-portfolio" class="portfolio-section">
+                <h2 class="portfolio-title">Color Grading</h2>
+                <!-- Added before/after comparison sliders -->
+                <div class="work-list">
+                    <div class="work">
+                        <div class="comparison-slider">
+                            <div class="comparison-container">
+                                <img src="img/une.jpg" alt="Before Color Grading" class="comparison-before">
+                                <img src="img/edi.jpg" alt="After Color Grading" class="comparison-after">
+                                <div class="comparison-slider-handle">
+                                    <div class="slider-line"></div>
+                                    <div class="slider-button">
+                                        <i class="fas fa-arrows-alt-h"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="layer">
+                            <h3>Cinematic Grading</h3>
+                            <p>Professional color grading for cinematic look and feel.</p>
+                            <a href="#"><i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                    </div>
+                    <div class="work">
+                        <div class="comparison-slider">
+                            <div class="comparison-container">
+                                <img src="img/color.jpg" alt="Before Color Grading" class="comparison-before">
+                                <img src="img/colored.jpg" alt="After Color Grading" class="comparison-after">
+                                <div class="comparison-slider-handle">
+                                    <div class="slider-line"></div>
+                                    <div class="slider-button">
+                                        <i class="fas fa-arrows-alt-h"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="layer">
+                            <h3>Commercial Grading</h3>
+                            <p>Color correction and grading for commercial video content.</p>
+                            <a href="#"><i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                    </div>
+                    <div class="work">
+                        <div class="comparison-slider">
+                            <div class="comparison-container">
+                                <img src="img/une1.jpg" alt="Before Color Grading" class="comparison-before">
+                                <img src="img/edi1.jpg" alt="After Color Grading" class="comparison-after">
+                                <div class="comparison-slider-handle">
+                                    <div class="slider-line"></div>
+                                    <div class="slider-button">
+                                        <i class="fas fa-arrows-alt-h"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="layer">
+                            <h3>Creative Grading</h3>
+                            <p>Artistic color grading with unique visual styles and moods.</p>
+                            <a href="#"><i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 3D Portfolio -->
+            <div id="3d-portfolio" class="portfolio-section">
+                <h2 class="portfolio-title">3D Portfolio</h2>
+                <div class="rows">
+                    <div class="column">
+                        <div class="three-d-container">
+                            <div id="rubiks-canvas" style="width:100%;height:400px;"></div>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="three-d-container">
+                            <div id="snowman-canvas" style="width:100%;height:400px;"></div>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="three-d-container">
+                            <div id="pencil-canvas" style="width:100%;height:400px;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Logo Portfolio -->
+            <div id="logo-portfolio" class="portfolio-section">
+                <h2 class="portfolio-title">Logo Design</h2>
+                <div class="work-list">
+                    <div class="work">
+                      <div style="display:flex; justify-content:center; align-items:center;">
+                        <img src="img/logo2.png" style="width:235px; height: 230px;" alt="Logo Work 1">
+                        </div>
+                        <div class="layer">
+                            <h3>Brand Identity</h3>
+                            <p>Complete brand identity design with logo and visual guidelines.</p>
+                            <a href="#"><i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                    </div>
+                    <div class="work">
+                        <div style="display:flex; justify-content:center; align-items:center;">
+                        <img src="img/logo3.png" style="width:235px; height: 230px;" alt="Logo Work 1">
+                        </div>
+                        <div class="layer">
+                            <h3>Corporate Logo</h3>
+                            <p>Professional corporate logo design with modern aesthetics.</p>
+                            <a href="#"><i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                    </div>
+                    <div class="work">
+                        <div style="display:flex; justify-content:center; align-items:center;">
+                        <img src="img/logo1.png" style="width:235px; height: 230px;" alt="Logo Work 1">
+                        </div>
+                        <div class="layer">
+                            <h3>Creative Logo</h3>
+                            <p>Artistic and creative logo design for creative industries.</p>
+                            <a href="#"><i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Typography Portfolio -->
+            <div id="typography-portfolio" class="portfolio-section">
+                <h2 class="portfolio-title">Typography</h2>
+                <div class="work-list">
+                    <div class="work">
+                        <img src="img/typo1.jpg" alt="Typography Work 1">
+                        <div class="layer">
+                            <h3>Custom Lettering</h3>
+                            <p>Hand-crafted custom lettering for branding and marketing.</p>
+                            <a href="#"><i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                    </div>
+                    <div class="work">
+                        <img src="img/typo2.jpg" alt="Typography Work 2">
+                        <div class="layer">
+                            <h3>Poster Typography</h3>
+                            <p>Creative typography design for posters and print materials.</p>
+                            <a href="#"><i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                    </div>
+                    <div class="work">
+                        <img src="img/typo3.png" alt="Typography Work 3">
+                        <div class="layer">
+                            <h3>Digital Typography</h3>
+                            <p>Modern typography design for digital media and web applications.</p>
+                            <a href="#"><i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact Section -->
+    <div id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="contact-left">
+                    <h1 class="sub-title">Contact Me</h1>
+                    <p><i class="fas fa-paper-plane"></i> 1-220104@asiatech.edu.ph</p>
+                    <p><i class="fas fa-phone-square-alt"></i> +63 981 387 6341</p>
+                    <div class="social-icons" style="padding-left: 23px;">
+                        <a href="https://www.facebook.com/itsedwardmiguel"><i class="fab fa-facebook"></i></a>
+                        <a href="https://www.instagram.com/itsedwardmiguel"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com/in/edward-miguel-c-bunag-b207a6385"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                    <a href="img/BUNAG_RESUME.pdf" download class="btn btn2">Download CV</a>
+                </div>
+                <div class="contact-right">
+                    <form name="submit-to-google-sheet">
+                        <input type="text" name="Name" placeholder="Your Name" required>
+                        <input type="email" name="Email" placeholder="Your Email" required>
+                        <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+                        <button type="submit" class="btn btn2">Submit</button>
+                    </form>
+                    <span id="msg"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="copyright">
+        <p>Copyright © Edward Miguel</p>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/three@0.152.2/build/three.min.js"></script>
+    <script src="script.js"></script>
+    <script src="cube.js"></script>
+</body>
+</html>
