@@ -312,24 +312,28 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 // Contact form functionality
-const scriptURL = "https://script.google.com/macros/s/AKfycbw4VghSpLq8uyXIZIrao18wbcN6ZPt1EWCUw2hyudjtxfcKuklDIl6lD9SIpIo-FcvpVQ/exec"
-const form = document.forms["submit-to-google-sheet"]
-const msg = document.getElementById("msg")
+ const scriptURL = "https://script.google.com/macros/s/YOUR_SCRIPT_ID/exec"
+  const form = document.forms["submit-to-google-sheet"]
+  const msg = document.getElementById("msg")
 
-if (form) {
-  form.addEventListener("submit", (e) => {
+  form.addEventListener("submit", e => {
     e.preventDefault()
-    fetch(scriptURL, { method: "POST", body: new FormData(form) })
-      .then((response) => {
-        msg.innerHTML = "Message sent successfully"
-        setTimeout(() => {
-          msg.innerHTML = ""
-        }, 5000)
-        form.reset()
+    fetch(scriptURL, { method: "POST", body: new FormData(form)})
+      .then(res => res.json()) // kunin JSON galing sa Apps Script
+      .then(obj => {
+        if (obj.status === "success") {
+          msg.innerHTML = "Message sent successfully!"
+          form.reset()
+          setTimeout(() => msg.innerHTML = "", 5000)
+        } else {
+          msg.innerHTML = "Server error: " + (obj.message || "Unknown error")
+        }
       })
-      .catch((error) => console.error("Error!", error.message))
-  })
-}
+      .catch(err => {
+        msg.innerHTML = "Network error: " + err.message
+        console.error(err)
+      })
+  }
 
 document.querySelectorAll('.work').forEach(work => {
     work.addEventListener('click', () => {
