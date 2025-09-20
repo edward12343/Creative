@@ -312,27 +312,22 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 // Contact form functionality
-HEAD
 const scriptURL = "https://script.google.com/macros/s/AKfycbzzh-sOETDOCMzT1oVl0eXrgEzKp8EvOXyN-ba5w3wONRQ1jdXoSdSW6V11iOoedw0VRg/exec"
-const form = document.forms["submit-to-google-sheet"]
-const msg = document.getElementById("msg")
+  const form = document.forms["submit-to-google-sheet"]
+  const msg = document.getElementById("msg")
 
   form.addEventListener("submit", e => {
-    e.preventDefault()
+    e.preventDefault() // <<--- stop default page reload
+
     fetch(scriptURL, { method: "POST", body: new FormData(form)})
-      .then(res => res.json()) // kunin JSON galing sa Apps Script
-      .then(obj => {
-        if (obj.status === "success") {
-          msg.innerHTML = "Message sent successfully!"
-          form.reset()
-          setTimeout(() => msg.innerHTML = "", 5000)
-        } else {
-          msg.innerHTML = "Server error: " + (obj.message || "Unknown error")
-        }
+      .then(res => res.text()) // plain text para kita agad response
+      .then(txt => {
+        msg.innerHTML = txt   // show response sa form
+        form.reset()
+        setTimeout(() => msg.innerHTML = "", 5000)
       })
       .catch(err => {
-        msg.innerHTML = "Network error: " + err.message
-        console.error(err)
+        msg.innerHTML = "Error: " + err.message
       })
   })
 
