@@ -340,10 +340,10 @@ document.querySelectorAll('.work').forEach(work => {
       // Kung gusto mo toggle lang (open/close)
       work.classList.toggle('active');
       });
-  });
+  }
 
   document.querySelectorAll('.layer a').forEach(link => {
   link.addEventListener('click', e => {
     e.stopPropagation(); // para hindi magsara/open ulit pag nag-click sa link
   });
-});
+}
