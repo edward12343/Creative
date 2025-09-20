@@ -312,7 +312,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 // Contact form functionality
-const scriptURL = "https://script.google.com/macros/s/AKfycbyYWqe-uaHCK059sLesR8rp99HK3oZ5JU6Ae2j5xoT4NxoGrzwN6ovjYXl04bJae21J_A/exec"
+const scriptURL = "https://script.google.com/macros/s/AKfycbwnCktrdjSsCRJuIZ_WSVfniiMgJ7hR3VuMIt-DFcbc-NJGObTu0hPG9qtFAJ_yYCgL/exec"
   const form = document.forms["submit-to-google-sheet"]
   const msg = document.getElementById("msg")
 
