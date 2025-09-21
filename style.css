@@ -14,6 +14,13 @@ body {
   color: #fff;
 }
 
+.center-text {
+  color:gray;
+  text-align: center;
+  max-width: 90%; /* prevents it from stretching too wide on large screens */
+  margin: 0 auto; /* centers it horizontally if you give a width */
+}
+
 /* Adding complete header styling with background and animations */
 #header {
   width: 100%;
