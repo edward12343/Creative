@@ -501,7 +501,7 @@ nav .fas {
     z-index: 1000;
     position: relative;
     padding: 12px;
-    background: rgba(217, 4, 41, 0.9);
+    background: #000000;
     border-radius: 8px;
     transition: all 0.3s ease;
     border: 2px solid white;
